@@ -1,8 +1,13 @@
-require('dotenv').config();
-const express = require('express');
+import 'dotenv/config';
+import express from 'express';
+import connectDB from './config/db.js';
+
 const app = express();
 
 app.use(express.json());
+
+// Connect to the database
+connectDB();
 
 const PORT = process.env.PORT || 3000;
 
