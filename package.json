@@ -1,0 +1,31 @@
+{
+  "name": "interim-assesment-ebene-zer",
+  "version": "1.0.0",
+  "description": "Full-Stack Integration – Coinbase Clone",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ebene-zer/interim-assesment-Ebene-zer.git"
+  },
+  "keywords": [
+    "Full-Stack"
+  ],
+  "author": "Ebenezer Fuachie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ebene-zer/interim-assesment-Ebene-zer/issues"
+  },
+  "homepage": "https://github.com/Ebene-zer/interim-assesment-Ebene-zer#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
