@@ -77,6 +77,16 @@ export const loginUser = async (req, res) => {
   }
 };
 
+export const getProfile = async (req, res) => {
+  return res.status(200).json({
+    user: {
+      name: req.user.name,
+      email: req.user.email,
+      createdAt: req.user.createdAt,
+    },
+  });
+};
+
 export const logoutUser = (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
