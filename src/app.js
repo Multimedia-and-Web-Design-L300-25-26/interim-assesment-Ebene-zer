@@ -3,6 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import authRoutes from './routes/authRoutes.js';
+import cryptoRoutes from './routes/cryptoRoutes.js';
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', authRoutes);
+app.use('/crypto', cryptoRoutes);
 
 export default app;

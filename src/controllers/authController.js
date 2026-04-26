@@ -40,6 +40,7 @@ export const registerUser = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
+        role: user.role,
       },
     });
   } catch (error) {
@@ -80,11 +81,22 @@ export const loginUser = async (req, res) => {
 export const getProfile = async (req, res) => {
   return res.status(200).json({
     user: {
+      id: req.user._id,
       name: req.user.name,
       email: req.user.email,
+      role: req.user.role,
       createdAt: req.user.createdAt,
     },
   });
+};
+
+export const getRegisteredUsers = async (_req, res) => {
+  try {
+    const users = await User.find().select('name email role createdAt').sort({ createdAt: -1 });
+    return res.status(200).json({ count: users.length, data: users });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
 };
 
 export const logoutUser = (req, res) => {
