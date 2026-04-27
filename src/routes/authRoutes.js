@@ -10,10 +10,10 @@ import { adminOnly, protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.post('/auth/register', registerUser);
-router.post('/auth/login', loginUser);
-router.post('/auth/logout', logoutUser);
-router.get('/auth/profile', protect, getProfile);
-router.get('/auth/admin/users', protect, adminOnly, getRegisteredUsers);
+router.post('/register', registerUser);
+router.post('/login', loginUser);
+router.post('/logout', logoutUser);
+router.get('/profile', protect, getProfile);
+router.get('/admin/users', protect, adminOnly, getRegisteredUsers);
 
 export default router;
